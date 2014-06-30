@@ -1,8 +1,10 @@
 Boostrap Alert Popover
 =====================
 
-Extension to usual [bootstrap popovers](http://getbootstrap.com/javascript/#popovers), adding a new `mode` option to display
+Extension to usual [bootstrap's popovers](http://getbootstrap.com/javascript/#popovers), adding a new `mode` option to display
 an alert close button.
+
+Test it at [JSFiddle](http://jsfiddle.net/tB9s3/).
 
 **NOTE:** this was built from http://getbootstrap.com/customize/?id=362b4aade57c034ccfdc
  / https://gist.github.com/362b4aade57c034ccfdc . Which only includes Bootstrap's tooltip, popover and alert.
