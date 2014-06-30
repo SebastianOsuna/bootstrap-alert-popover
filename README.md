@@ -9,7 +9,7 @@ Also added a new trigger called `click-outside`. This is supposed to fix the `fo
 dismissed when the popover itself is clicked, opposed to the default `focus` trigger. The `click` trigger is still used to show 
 the popover.
 
-Test it at [JSFiddle](http://jsfiddle.net/tB9s3/).
+Test it at [JSFiddle](http://jsfiddle.net/tB9s3/2/).
 
 **NOTE:** this was built from http://getbootstrap.com/customize/?id=362b4aade57c034ccfdc
  / https://gist.github.com/362b4aade57c034ccfdc . Which only includes Bootstrap's tooltip, popover and alert.
