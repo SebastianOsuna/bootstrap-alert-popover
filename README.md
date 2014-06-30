@@ -1,8 +1,13 @@
 Boostrap Alert Popover
-=====================
+============
+## and a `focus` trigger fix
 
-Extension to usual [bootstrap's popovers](http://getbootstrap.com/javascript/#popovers), adding a new `mode` option to display
+Extension to usual [bootstrap's popovers](http://getbootstrap.com/javascript/#popovers), adding a new `mode` and `trigger` option to display
 an alert close button.
+
+Also added a new trigger called `click-outside`. This is supposed to fix the `focus` trigger behavior. The popover is not 
+dismissed when the popover itself is clicked, opposed to the default `focus` trigger. The `click` trigger is still used to show 
+the popover.
 
 Test it at [JSFiddle](http://jsfiddle.net/tB9s3/).
 
@@ -11,6 +16,7 @@ Test it at [JSFiddle](http://jsfiddle.net/tB9s3/).
  
  This overrides the following CSS rules:
  
+
 ```
 .popover-title {
 //  original: 8px 14px; 
@@ -34,14 +40,16 @@ Test it at [JSFiddle](http://jsfiddle.net/tB9s3/).
 -----------
 
 #### Inline ####
-Use `data` attributes in your HTML
+
+Use the `data-mode` attribute in your HTML
 
 ```
 <button type="button" id="my-button" data-mode="alert" title="My title" data-content="This is the popover content.">Show alert popover</button>
 ```
 
-#### Code ####
-Pass `mode: alert` in the `jQuery` constructor
+#### Javascript ####
+
+Pass `mode: 'alert'` in the `jQuery` constructor
 
 ```
 $("#my-button")
@@ -52,3 +60,6 @@ $("#my-button")
         mode: 'alert' 
     });
 ```
+
+**Use the `click-outside` trigger if you want the popover to be dismissed when user clicks outside of it.** (`focus` dismisses
+the popover even if you click on it)

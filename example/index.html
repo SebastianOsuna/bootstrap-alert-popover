@@ -8,13 +8,17 @@
         <button type="button" id="alert-popover">Alert popover</button>
     </div>
     <div style="padding: 55px">
+        <button type="button" id="alert-click-outside-popover">Alert popover</button>
+    </div>
+    <div style="padding: 55px">
         <button type="button" id="normal-popover">Normal popover</button>
     </div>
     <!-- jQuery import -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
      <!-- custom bootstrap import -->
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
     <script type="text/javascript">
+
         // Alert popover
         var popover = $("#alert-popover")
                 .popover({
@@ -23,8 +27,16 @@
                     content: 'Content for alert popover.',
                     mode: 'alert'
                 });
+        // Alert popover with click-outside trigger
+        var popover2 = $("#alert-click-outside-popover")
+                .popover({
+                    trigger: 'click-outside',
+                    title: 'Alert popover',
+                    content: 'Content for alert + click outside popover.',
+                    mode: 'alert'
+                });
         // Normal popover
-        var popover2 = $("#normal-popover")
+        var popover3 = $("#normal-popover")
                 .popover({
                     trigger: 'click',
                     title: 'Normal popover',

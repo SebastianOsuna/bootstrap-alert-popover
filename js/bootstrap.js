@@ -165,6 +165,9 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
 
       if (trigger == 'click') {
         this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this))
+      } else if(trigger == 'click-outside') {
+          this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.show, this))
+          this.$viewport.on('click.' + this.type, $.proxy(this.child_is_focus, this))
       } else if (trigger != 'manual') {
         var eventIn  = trigger == 'hover' ? 'mouseenter' : 'focusin'
         var eventOut = trigger == 'hover' ? 'mouseleave' : 'focusout'
@@ -238,7 +241,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
     }, self.options.delay.show)
   }
 
-  Tooltip.prototype.leave = function (obj) {
+      Tooltip.prototype.leave = function (obj) {
     var self = obj instanceof this.constructor ?
       obj : $(obj.currentTarget).data('bs.' + this.type)
 
@@ -256,6 +259,10 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
     self.timeout = setTimeout(function () {
       if (self.hoverState == 'out') self.hide()
     }, self.options.delay.hide)
+  }
+
+  Tooltip.prototype.child_is_focus = function (evn) {
+      if (!$(evn.target).is(this.$element) && !$(evn.target).closest(this.$tip).length) this.hide()
   }
 
   Tooltip.prototype.show = function () {
